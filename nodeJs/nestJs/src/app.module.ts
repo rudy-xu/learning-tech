@@ -13,7 +13,7 @@ import config from './configuration/config.js';
       isGlobal: true,
       load: [config]
     }),
-    MongooseModule.forRoot('mongodb://root:Aa123456@43.154.221.120:27017', {
+    MongooseModule.forRoot(process.env.MONGO_URL, {
       dbName: 'nest'
     }),
     CatsModule
