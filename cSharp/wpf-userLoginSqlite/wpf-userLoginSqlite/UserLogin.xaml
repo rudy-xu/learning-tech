@@ -5,25 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_userLoginSqlite"
         mc:Ignorable="d"
-        Title="User Login" Height="450" Width="800">
-    <Grid>
-      <Grid.RowDefinitions>
-      <RowDefinition Height="60" />
-      <RowDefinition Height="60" />
-      <RowDefinition Height="60" />
-      <RowDefinition Height="*" />
-    </Grid.RowDefinitions>
+        Title="User Login" Height="500" Width="600">
+    <Grid HorizontalAlignment="Center"  VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-    <Button Grid.Row="0" Content="Button 3"></Button>
-      
-    <StackPanel Grid.Row="1">
-      <Label> Account: </Label>
-      <TextBox x:Name="account" Text="" />
-    </StackPanel>
-    <StackPanel Grid.Row="2">
-      <Label>Password:</Label>
-      <TextBox x:Name="pwd" Text="" />
-    </StackPanel>
-    <Button Grid.Row="3" Click="Submit_Click">Login</Button>
-  </Grid>
+        <StackPanel Grid.Row="0">
+            <Image Source="/Images/404.png" Width="200" Height="200" Margin="30 0 0 0"/>
+            <Label FontSize="30" FontWeight="Bold" Foreground="#4d94ff" Padding="60 0 0 0" Content="Login"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0 20 0 0">
+            <StackPanel>
+                <Label FontSize="16">Account:</Label>
+                <TextBox x:Name="account" Text="" />
+            </StackPanel>
+            <StackPanel>
+                <Label FontSize="16">Password:</Label>
+                <TextBox x:Name="pwd" Text="" />
+            </StackPanel>
+            <Button Click="Submit_Click" Margin="0 20 0 20" Background="#4d94ff" Foreground="White" FontSize="20" BorderThickness="0">Login</Button>
+        </StackPanel>
+    </Grid>
 </Window>
