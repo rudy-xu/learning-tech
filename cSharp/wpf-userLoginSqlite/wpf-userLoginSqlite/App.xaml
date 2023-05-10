@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:wpf_userLoginSqlite"
              StartupUri="UserLogin.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+      <ResourceDictionary Source="Resources/loginResDic.xaml"/>
+  </Application.Resources>
 </Application>

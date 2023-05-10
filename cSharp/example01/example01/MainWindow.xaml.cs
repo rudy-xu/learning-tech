@@ -33,5 +33,12 @@ namespace example01
         txtName.Clear();
       }
     }
+
+    private void OnKeyDownHandler(Object sender, KeyEventArgs e) {
+      if (e.Key == Key.Return) {
+        lastNames.Items.Add(txtName.Text);
+        txtName.Clear();
+      }
+    }
   }
 }

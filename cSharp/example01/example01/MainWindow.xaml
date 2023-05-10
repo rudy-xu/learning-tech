@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:example01"
         mc:Ignorable="d"
-        Title="Rudy" Height="450" Width="800">
+        Title="Rudy" Height="450" Width="600">
   <Grid Margin="10">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -18,13 +18,17 @@
     </Grid.ColumnDefinitions>
 
     <Label> Names</Label>
-    <ListBox Grid.Row="1" x:Name="lastNames" >
-            <Label Content="Label"/>
-        </ListBox>
+    <ListBox Grid.Row="1" x:Name="lastNames"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
-      <TextBox x:Name="txtName" Text="" />
-      <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click">Add Name</Button>
+    <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
+      <TextBox
+        x:Name="txtName"
+        Text="" Height="30"
+        VerticalContentAlignment="Center"
+        HorizontalContentAlignment="Left"
+        KeyDown="OnKeyDownHandler"
+      />
+      <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click" Height="30">Add Name</Button>
     </StackPanel>
   </Grid>
 </Window>

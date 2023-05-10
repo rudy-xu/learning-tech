@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0">
-            <Image Source="/Images/404.png" Width="200" Height="200" Margin="30 0 0 0"/>
+            <Image Source="{StaticResource LogoImage}" Width="200" Height="200" Margin="30 0 0 0"/>
             <Label FontSize="30" FontWeight="Bold" Foreground="#4d94ff" Padding="60 0 0 0" Content="Login"/>
         </StackPanel>
 
