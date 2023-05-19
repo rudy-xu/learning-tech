@@ -5,7 +5,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Images\404.png" />
+    <None Remove="Resources\Images\404.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.5" />
@@ -17,6 +17,6 @@
     <ProjectReference Include="..\ModuleDialog\ModuleDialog.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\404.png" />
+    <Resource Include="Resources\Images\404.png" />
   </ItemGroup>
 </Project>

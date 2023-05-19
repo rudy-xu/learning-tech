@@ -14,6 +14,7 @@ namespace ModuleDialog.ViewModels
     public DelegateCommand CancelCommand { get; set; }
     public DelegateCommand OkCommand { get; set; }
     public string Title { get; set; }
+    public string Content { get; set; }
 
     public event Action<IDialogResult> RequestClose;
 
@@ -52,6 +53,7 @@ namespace ModuleDialog.ViewModels
     public void OnDialogOpened(IDialogParameters parameters)
     {
       Title = parameters.GetValue<string>("Title");
+      Content = parameters.GetValue<string>("Content");
     }
   }
 }

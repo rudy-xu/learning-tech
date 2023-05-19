@@ -2,8 +2,13 @@
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Mvvm;
 using PrismBlankApp.DataContext;
-using PrismBlankApp.ViewModels;
+using PrismBlankApp.Helpers;
+using PrismBlankApp.Interfaces;
+using PrismBlankApp.Modules.Login;
+using PrismBlankApp.Modules.Main;
+using PrismBlankApp.Modules.ViewB;
 using PrismBlankApp.Views;
 using System.Windows;
 
@@ -20,6 +25,12 @@ namespace PrismBlankApp
       // DB init
       DatabaseFacade facade = new DatabaseFacade(new UserDataContext());
       facade.EnsureCreated();
+
+      string lang = System.Globalization.CultureInfo.CurrentCulture.Name;
+      if (lang == Common.LanguageTypes[LanguageEnum.en_us])
+      {
+        LanguageHelper.ChangeLanguage(LanguageEnum.en_us);
+      }
 
       // 通过 IoC 容器获取主窗口
       return Container.Resolve<MainWindow>();
@@ -60,6 +71,14 @@ namespace PrismBlankApp
       containerRegistry.RegisterForNavigation<ViewC>();
     }
 
+    protected override void ConfigureViewModelLocator()
+    {
+      base.ConfigureViewModelLocator();
+      ViewModelLocationProvider.Register<Login, LoginViewModel>();
+      ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
+    }
+
+    // Add external Module with way of code
     //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     //{
     //  moduleCatalog.AddModule<ModuleWPFTutorialAppProfile>();

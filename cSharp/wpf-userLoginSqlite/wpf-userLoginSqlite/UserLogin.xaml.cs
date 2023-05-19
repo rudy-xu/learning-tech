@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using wpf_userLoginSqlite.Helper;
 
 namespace wpf_userLoginSqlite
 {
@@ -46,6 +47,18 @@ namespace wpf_userLoginSqlite
     {
      MainPage mainPage = new MainPage();
       mainPage.Show();
+    }
+
+    private void ChangeLanguage_Click(object sender, RoutedEventArgs e)
+    {
+      if (LanguageHelper.Language.Equals(LanguageEnum.en_us))
+      {
+        LanguageHelper.ChangeLanguage(LanguageEnum.zh_cn);
+      }
+      else
+      {
+        LanguageHelper.ChangeLanguage(LanguageEnum.en_us);
+      }
     }
   }
 }
