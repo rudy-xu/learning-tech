@@ -5,6 +5,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="config.yml" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="YamlDotNet" Version="13.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="config.yml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 </Project>

@@ -30,10 +30,4 @@ namespace PrismBlankApp.Views
       InitializeComponent();
       //this.DataContext = new LoginViewModel();
     }
-
-        //private void testLogin(object sender, RoutedEventArgs e)
-        //{
-        //  this.DialogResult = true;
-        //}
-    }
 }

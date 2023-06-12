@@ -22,7 +22,7 @@
     <Label>Names</Label>
     <ListBox Grid.Row="1"
              x:Name="lastNames"
-             ItemsSource="{Binding Path=NameList, Mode=TwoWay}"/>
+             ItemsSource="{Binding Path=NameList, Mode=OneWay}"/>
 
     <StackPanel Grid.Row="1"
                 Grid.Column="1"

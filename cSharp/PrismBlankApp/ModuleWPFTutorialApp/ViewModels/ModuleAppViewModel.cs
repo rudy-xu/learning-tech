@@ -3,12 +3,14 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Xml.Linq;
+using YamlDotNet.RepresentationModel;
 
 namespace ModuleWPFTutorialApp.ViewModels
 {
@@ -34,6 +36,20 @@ namespace ModuleWPFTutorialApp.ViewModels
     {
       AddCommand = new DelegateCommand(addName);
       KeyDownCommand = new DelegateCommand(OnKeyDownHandler);
+
+      var yaml = new YamlStream();
+      using (var reader = new StreamReader(@"C:\learning\learning-tech\cSharp\PrismBlankApp\ModuleWPFTutorialApp\config.yml"))
+      {
+        yaml.Load(reader);
+      }
+
+      var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
+      foreach (var entry in mapping.Children)
+      {
+        string str1 = ((YamlScalarNode)entry.Key).Value.ToString();
+        string str2 = ((YamlScalarNode)entry.Value).Value.ToString();
+        NameList.Add(str2);
+      }
     }
 
     public void addName()

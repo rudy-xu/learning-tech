@@ -40,7 +40,8 @@
         HorizontalAlignment="Right"
         Content="{DynamicResource language}"
         FontSize="20"
-        DockPanel.Dock="Top">
+        DockPanel.Dock="Top"
+                Click="Button_Click">
         <Button.Template>
           <ControlTemplate
             TargetType="{x:Type Button}">

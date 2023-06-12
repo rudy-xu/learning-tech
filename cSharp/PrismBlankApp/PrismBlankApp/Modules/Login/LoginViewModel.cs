@@ -43,6 +43,9 @@ namespace PrismBlankApp.Modules.Login
 
     private void Login(object obj)
     {
+      /**
+       * rudy/123456
+       */
 
       var userName = _account;
       var password = _password;
